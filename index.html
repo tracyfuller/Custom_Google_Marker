@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Google Maps API</title>
+
+<style type="text/css">
+
+#map-canvas {
+	width: 700px;
+	height: 400px;
+}
+
+</style>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script type="text/javascript" src="CustomGoogleMapMarker.js"></script>
+<script type="text/javascript">
+
+//	In this example, they are initializing with a single location, so we'll have to adjust appropriately.
+function initialize() {
+
+	//we can use this variable to grab the data from the dataset. We may need to alter placement as this example assumes only one point.
+	var myLatlng = new google.maps.LatLng(-31.9546781,115.852662);
+	//Michelle, can you clarify if this is something that remains static for all of the points?
+	var mapOptions = {
+		zoom: 14,
+		center: myLatlng,
+		disableDefaultUI: true
+	}
+
+	//I think this creates the actual map? I don't think we need to do this more than once.
+	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+	//this was the examples standard marker. I just left it greyed out.
+	/*
+	// Example standard marker
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		title: 'Hello World!'
+	});
+	*/
+
+	//This is the actual data that is getting passed back to the function in the app.js.
+	//To be honest, I can't find where "overlay" is being declared as a variable, so I don't know if it's native to the google API or not.
+	overlay = new CustomMarker(
+		myLatlng, 
+		map,
+		{
+			marker_id: '123',
+			text: 'Testing'
+		}
+	);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+</head>
+<body>
+
+	<div id="map-canvas">
+	</div>
+
+</body>
+</html>
