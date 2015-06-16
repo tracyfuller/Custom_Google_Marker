@@ -22,10 +22,14 @@ CustomMarker.prototype.draw = function() {
 		div = this.div = document.createElement('div');
 
 		//this is the part I wrote that creates the text inside of the overlay div and appends it to it's parent div
-		var divText = document.createElement('b');
+		var divText = document.createElement('div');
+		var divNum = document.createElement('div');
+		var number = document.createTextNode(self.args.number);
 		var text = document.createTextNode(self.args.text); //creating the text node as an argument that is passed in from the object
 		divText.appendChild(text);
+		divNum.appendChild(number);
 		div.appendChild(divText);
+		div.appendChild(divNum);
 
 		// this is setting the class and styles of the overlay div.
 		div.className = 'marker';
@@ -36,8 +40,9 @@ CustomMarker.prototype.draw = function() {
 		div.style.width = '60px';
 		div.style.height = 'auto';
 		div.style.background = 'blue';
-		div.style.padding = '3px';
+		div.style.padding = '4px';
 		div.style.color = 'white';
+		div.style.font = '16px Helvetica, Arial, sans-serif';
 
 		//if the object has a marker_id, set the div to have a marker_id
 		if (typeof(self.args.marker_id) !== 'undefined') {
