@@ -26,6 +26,10 @@ CustomMarker.prototype.draw = function() {
 		var divNum = document.createElement('div');
 		var number = document.createTextNode(self.args.number);
 		var text = document.createTextNode(self.args.text); //creating the text node as an argument that is passed in from the object
+
+		divText.className = 'markerPrice'; //give classes to internal divs
+		divNum.className = 'markerNumber';
+
 		divText.appendChild(text);
 		divNum.appendChild(number);
 		div.appendChild(divText);
@@ -35,14 +39,14 @@ CustomMarker.prototype.draw = function() {
 		div.className = 'marker';
 
 		// this is styling the div, but I want to find a way to style the text inside of the div. I'm still working on that.
-		div.style.position = 'absolute';
-		div.style.cursor = 'pointer';
-		div.style.width = '60px';
-		div.style.height = 'auto';
-		div.style.background = 'blue';
-		div.style.padding = '4px';
-		div.style.color = 'white';
-		div.style.font = '16px Helvetica, Arial, sans-serif';
+		//div.style.position = 'absolute';
+		//div.style.cursor = 'pointer';
+		//div.style.width = '60px';
+		//div.style.height = 'auto';
+		//div.style.background = 'blue';
+		//div.style.padding = '4px';
+		//div.style.color = 'white';
+		//div.style.font = '16px Helvetica, Arial, sans-serif';
 
 		//if the object has a marker_id, set the div to have a marker_id
 		if (typeof(self.args.marker_id) !== 'undefined') {
