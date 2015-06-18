@@ -29,11 +29,12 @@ CustomMarker.prototype.draw = function() {
 		var text = document.createTextNode(self.args.text); //creating the text node as an argument that is passed in from the object
 
 		var pointImg = document.createElement('img');
-		pointImg.src = 'test-point.png';
+		pointImg.src = 'test-point.png'; //this is a fixed image, if we have different colors for promoted vs sublease, we will need two image options.
 
 		divText.className = 'markerPrice'; //give classes to internal divs
 		divNum.className = 'markerNumber';
-		divPoint.className = self.args.point;
+		divPoint.className = self.args.point; //I have this as a variable so that we can give different classes based on whether a listing is 'promoted'. ie 'if (listing) == promoted, then {give promoted class}
+
 
 		divText.appendChild(text);
 		divNum.appendChild(number);
