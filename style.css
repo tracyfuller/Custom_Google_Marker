@@ -21,9 +21,20 @@
     background-color: blue;
 }
 .markerNumber {
-    isplay: inline-block;
+    display: inline-block;
     float: left;
     margin-right: 3px;
     background-color: green;
     padding: 2px 4px 2px 4px;
+}
+.markerPoint {
+    display: block;
+    margin: 0 auto;
+    width: inherit;
+}
+.markerPoint img {
+    max-width: 100%;
+    height: 15px;
+    margin: 0 auto;
+    border: 1px;
 }
