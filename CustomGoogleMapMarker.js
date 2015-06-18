@@ -28,7 +28,8 @@ CustomMarker.prototype.draw = function() {
 		var number = document.createTextNode(self.args.number);
 		var text = document.createTextNode(self.args.text); //creating the text node as an argument that is passed in from the object
 
-		var pointImg = document.createElement('img', src='blue-marker-point-proof.png');
+		var pointImg = document.createElement('img');
+		pointImg.src = 'test-point.png';
 
 		divText.className = 'markerPrice'; //give classes to internal divs
 		divNum.className = 'markerNumber';

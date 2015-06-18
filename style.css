@@ -12,7 +12,6 @@
     font-size: 16px;
     line-height: normal;
     font-family: Helvetica, Arial, sans-serif;
-    background-color: blue;
 }
 .markerPrice {
     display: inline-block;
@@ -23,18 +22,14 @@
 .markerNumber {
     display: inline-block;
     float: left;
-    margin-right: 3px;
     background-color: green;
     padding: 2px 4px 2px 4px;
 }
 .markerPoint {
     display: block;
-    margin: 0 auto;
-    width: inherit;
+    text-align: center;
 }
 .markerPoint img {
-    max-width: 100%;
-    height: 15px;
-    margin: 0 auto;
-    border: 1px;
+    height: 10px;
+    vertical-align: top;
 }
